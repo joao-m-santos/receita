@@ -3,7 +3,6 @@ title: Honey sriracha tofu
 description: A simple, delicious and spicy marinade for your tofu
 tags: ['simple']
 author: Joao
-lastUpdate: 2023-09-14
 ---
 
 ::ingredients

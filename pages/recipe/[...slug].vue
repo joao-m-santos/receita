@@ -18,12 +18,15 @@
         <p>No content found.</p>
       </template> -->
 
-      <div class="footnote">Last updated: {{ formatDate(doc.lastUpdate) }}</div>
+      <div v-if="lastUpdated" class="footnote">Last updated: {{ formatDate(lastUpdated) }}</div>
     </ContentDoc>
   </article>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const route = useRoute();
+const lastUpdated = await getLastUpdated(route.params.slug as string);
+</script>
 
 <style scoped>
 article {
