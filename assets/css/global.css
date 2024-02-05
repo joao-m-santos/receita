@@ -1,0 +1,103 @@
+@import './reset.css';
+@import './fonts.css';
+
+:root {
+  --dark-blue: #2e294e;
+  --blue: #3d2ee7;
+  --light-blue: #d9d3ff;
+  --blue-gray: #908fa3;
+  --red: #ec5760;
+  --light-red: #ffdfe1;
+  --light-gray: #f3f6f9;
+  --gray: #d0d4d7;
+  --green: #448f53;
+  --light-green: #ddffe4;
+  --white: #fff;
+
+  --title-font-family: Raleway;
+  --body-font-family: Inter;
+}
+
+html {
+  background-color: var(--light-gray);
+  color: var(--dark-blue);
+  font-family: var(--body-font-family), system-ui, sans-serif;
+  font-size: 16px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.link {
+  cursor: pointer;
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-family: var(--title-font-family);
+}
+
+h2 {
+  font-family: var(--title-font-family);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-family: var(--title-font-family);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem; /* 40px */
+  padding: 0.5rem 1rem;
+  color: var(--white);
+  font-family: var(--title-font-family);
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: pre;
+  background-color: var(--red);
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: filter 0.1s ease-in-out;
+}
+
+.button:hover {
+  filter: brightness(0.95);
+}
+
+.button:active {
+  filter: brightness(0.8);
+}
+
+.button.button--square {
+  padding: 0.5rem 0.75rem;
+}
+
+code {
+  background-color: var(--gray);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.center {
+  text-align: center;
+}
