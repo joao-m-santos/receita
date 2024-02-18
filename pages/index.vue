@@ -21,9 +21,13 @@
 </template>
 
 <script setup lang="ts">
-const { data } = await useAsyncData('recipes', () => queryContent('recipes').limit(6).find());
+import type { IRecipe } from '~/types';
 
-const computedData = ref(null);
+const { data } = await useAsyncData('recipes', () =>
+  queryContent<IRecipe>('recipes').limit(6).find()
+);
+
+const computedData = ref<Array<IRecipe> | null>(null);
 
 function getSlugFromPath(path: string) {
   return path.replace('/recipes/', '');
@@ -39,7 +43,7 @@ async function computeData() {
         return recipe;
       })
     )
-  ).sort(sortByLastUpdated);
+  ).toSorted(sortByLastUpdated);
 }
 
 watch(() => data.value, computeData, { immediate: true });

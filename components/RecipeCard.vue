@@ -36,7 +36,7 @@ const props = defineProps({
   },
   description: {
     type: String,
-    default: '',
+    required: true,
   },
   author: {
     type: String,
