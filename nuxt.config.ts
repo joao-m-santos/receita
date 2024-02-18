@@ -6,6 +6,6 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/reset.css', '~/assets/css/fonts.css', '~/assets/css/global.css'],
-  modules: ['@nuxt/content', '@nuxt/image'],
   devtools: { enabled: true },
+  modules: ['@nuxt/content', '@nuxt/image'],
 });

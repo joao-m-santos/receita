@@ -1,8 +1,22 @@
 <template>
-  <form id="form">
-    <input id="search" type="search" placeholder="Search for recipes, ingredients, anything..." />
+  <form id="form" @submit.prevent="onSubmit">
+    <input
+      v-model="search"
+      id="search"
+      type="search"
+      placeholder="Search for recipes, ingredients, anything..."
+    />
   </form>
 </template>
+
+<script setup lang="ts">
+const search = useSearch();
+
+function onSubmit() {
+  if (!search.value) return;
+  navigateTo({ path: '/', query: { q: search.value } });
+}
+</script>
 
 <style scoped>
 input {

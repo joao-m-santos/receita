@@ -9,7 +9,7 @@
       :to="(recipe._path as string)"
     >
       <RecipeCard
-        :title="(recipe.title as string)"
+        :title="recipe.title"
         :description="recipe.description"
         :author="recipe.author"
         :tags="recipe.tags"
@@ -23,8 +23,10 @@
 <script setup lang="ts">
 import type { IRecipe } from '~/types';
 
+const search = useSearch();
+
 const { data } = await useAsyncData('recipes', () =>
-  queryContent<IRecipe>('recipes').limit(6).find()
+  queryContent<IRecipe>('recipes').where(getDataQuery(search.value)).limit(6).find()
 );
 
 const computedData = ref<Array<IRecipe> | null>(null);
@@ -46,7 +48,13 @@ async function computeData() {
   ).toSorted(sortByLastUpdated);
 }
 
+async function handleSearch(value: string) {
+  updateRouteQuery('q', value);
+  data.value = await queryContent<IRecipe>('recipes').where(getDataQuery(value)).find();
+}
+
 watch(() => data.value, computeData, { immediate: true });
+watch(() => search.value, debounce(handleSearch, 500));
 </script>
 
 <style scoped>
