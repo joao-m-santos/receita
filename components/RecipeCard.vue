@@ -42,13 +42,11 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  slug: {
+  lastUpdated: {
     type: String,
-    required: true,
+    default: '',
   },
 });
-
-const lastUpdated = await getLastUpdated(props.slug);
 </script>
 
 <style scoped>
