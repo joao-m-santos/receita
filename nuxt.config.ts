@@ -5,12 +5,7 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     },
   },
-  css: [
-    '~/assets/css/reset.css',
-    '~/assets/css/fonts.css',
-    '~/assets/css/global.css',
-    '~/assets/css/highlightjs-copy.css',
-  ],
+  css: ['~/assets/css/reset.css', '~/assets/css/fonts.css', '~/assets/css/global.css'],
   modules: ['@nuxt/content', '@nuxt/image'],
   devtools: { enabled: true },
 });

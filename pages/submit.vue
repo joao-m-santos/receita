@@ -16,7 +16,10 @@
   </p>
 
   <p class="button-wrapper">
-    <NuxtLink :to="repoUrl" target="_blank" class="button">Go to GitHub repository</NuxtLink>
+    <NuxtLink :to="repoUrl" target="_blank" class="button">
+      <PhArrowSquareOut weight="bold" />
+      Go to GitHub repository
+    </NuxtLink>
   </p>
 
   <p class="button-wrapper">
@@ -29,43 +32,45 @@
     <ol class="step-list">
       <li>
         Clone the repository
-        <pre><code>git clone git@github.com:joao-m-santos/receita.git</code></pre>
+        <pre><CodeBlock>git clone git@github.com:joao-m-santos/receita.git</CodeBlock></pre>
       </li>
       <li>
         Create a new branch and switch to it
-        <pre><code>git checkout -b my-new-recipe</code></pre>
+        <pre><CodeBlock>git checkout -b my-new-recipe</CodeBlock></pre>
       </li>
       <li>
         Copy the recipe template and rename it to your recipe
-        <pre><code>cp src/recipe.template.mdx src/content/recipes/my-new-recipe.mdx</code></pre>
+        <pre><CodeBlock>cp src/recipe.template.mdx src/content/recipes/my-new-recipe.mdx</CodeBlock></pre>
       </li>
       <li>Edit the file with your recipe ingredients and steps, keeping the template structure</li>
       <li>Add a picture with the same name as your recipe to the <code>src/assets</code> folder</li>
       <li>
         Stage your files
-        <pre><code>git add src/assets/my-new-recipe.png src/content/recipes/my-new-recipe.mdx</code></pre>
+        <pre><CodeBlock>git add src/assets/my-new-recipe.png src/content/recipes/my-new-recipe.mdx</CodeBlock></pre>
       </li>
       <li>
         Commit your files
-        <pre><code>git commit -m "New recipe: My new recipe"</code></pre>
+        <pre><CodeBlock>git commit -m "New recipe: My new recipe"</CodeBlock></pre>
       </li>
       <li>
         Push your branch
-        <pre><code>git push -u origin my-new-recipe</code></pre>
+        <pre><CodeBlock>git push -u origin my-new-recipe</CodeBlock></pre>
       </li>
       <li>
         Create a PR for your recipe
         <br />
         (Windows)
-        <pre><code>start https://github.com/joao-m-santos/receita/pull/new/my-new-recipe</code></pre>
+        <pre><CodeBlock>start https://github.com/joao-m-santos/receita/pull/new/my-new-recipe</CodeBlock></pre>
         (MacOS)
-        <pre><code>open https://github.com/joao-m-santos/receita/pull/new/my-new-recipe</code></pre>
+        <pre><CodeBlock>open https://github.com/joao-m-santos/receita/pull/new/my-new-recipe</CodeBlock></pre>
       </li>
     </ol>
   </div>
 </template>
 
 <script setup lang="ts">
+import { PhArrowSquareOut } from '@phosphor-icons/vue';
+
 import { repoUrl } from '~/config.json';
 
 const isStepByStepVisible = ref(false);

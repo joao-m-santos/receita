@@ -7,7 +7,10 @@
       <HeaderSearch />
     </div>
     <div class="submit">
-      <NuxtLink to="/submit" class="button browser">Submit recipe</NuxtLink>
+      <NuxtLink to="/submit" class="button browser">
+        <PhUploadSimple weight="bold" />
+        Submit recipe
+      </NuxtLink>
       <NuxtLink to="/submit" class="button button--square mobile">
         <PhUploadSimple weight="bold" />
       </NuxtLink>
@@ -32,7 +35,7 @@ import { footerHref } from '../config.json';
 
 <style>
 body {
-  --content-width: 46rem; /* 736px */
+  --content-width: 50rem; /* 800px */
 }
 
 header {
@@ -110,8 +113,10 @@ main {
 
 footer {
   position: fixed;
-  bottom: 1rem;
-  left: 1rem;
+  bottom: 0rem;
+  left: 0rem;
+  padding: 1rem;
+  background-color: var(--light-gray);
   font-size: 0.75rem;
 }
 

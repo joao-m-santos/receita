@@ -1,15 +1,18 @@
 <template>
   <section class="ingredients">
     <h3>Ingredients</h3>
-    <slot />
+    <div class="ingredients__content">
+      <slot />
+    </div>
   </section>
 </template>
 
-<style scoped>
+<script setup lang="ts"></script>
+
+<style>
 .ingredients {
   padding: 1rem;
   background-color: var(--white);
-
   border-radius: 0.25rem;
 }
 
@@ -19,8 +22,9 @@
   font-weight: 400;
 }
 
-.ingredients > ul {
-  list-style-type: none;
-  padding-left: 0;
+.ingredients__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
 }
 </style>
