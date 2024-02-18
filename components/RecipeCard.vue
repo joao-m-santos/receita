@@ -1,6 +1,6 @@
 <template>
   <div class="recipe-card">
-    <div v-if="lastUpdated" class="timestamp">
+    <div v-if="lastUpdated" class="timestamp" :title="new Date(lastUpdated).toString()">
       <PhClock weight="bold" />
       {{ formatDate(lastUpdated) }}
     </div>

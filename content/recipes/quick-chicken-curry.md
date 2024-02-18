@@ -1,6 +1,6 @@
 ---
 title: Quick chicken curry
-description: An iteration on Mom Gracinda's classic chicken curry recipe - this dish is quick, easy to cook and very tasty.
+description: An iteration on Mom Gracinda's classic chicken curry recipe - this dish is quick, easy to cook and very tasty
 tags: ['fast']
 author: Joao
 ---

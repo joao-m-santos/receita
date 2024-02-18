@@ -40,8 +40,6 @@ async function computeData() {
       })
     )
   ).sort(sortByLastUpdated);
-
-  console.log(computedData.value);
 }
 
 watch(() => data.value, computeData, { immediate: true });
