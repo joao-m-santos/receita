@@ -1,10 +1,29 @@
-# Receita (Nuxt)
+# Receita
 
 A simple recipe database website with mine & friends' delicious recipes!
 
-This website was originally built with [Astro](https://astro.build/). This is a rebuilt version, with Nuxt 3.
+This website was originally built with [Astro](https://astro.build/). This is a rebuilt version, with [Nuxt 3](https://nuxt.com/).
 
-## Setup
+## Submitting recipes
+
+To submit a new recipe, create a new [MDC](https://content.nuxt.com/usage/markdown) file under `content/recipes/`. The filename will be the URL for the recipe. Additionally, you must add a cover image to `public/images/` with the same filename as the recipe file.
+
+You can use the template file `recipe.template.md` as a base for your new recipe.
+
+Finally, submit a PR with your recipe files.
+
+## To-do
+
+- [x] ~~Responsiveness~~
+- [ ] Allow more image formats (.jpeg, etc.)
+- [ ] Search
+  - [ ] Improve matching algorithm (find by ingredients, close matches, etc.)
+- [ ] Add more tags
+- [x] Automatic timestamps
+
+## Development
+
+### Setup
 
 Make sure to install the dependencies:
 
@@ -12,7 +31,7 @@ Make sure to install the dependencies:
 bun install
 ```
 
-## Development Server
+### Dev server
 
 Start the development server on `http://localhost:3000`:
 
@@ -20,7 +39,7 @@ Start the development server on `http://localhost:3000`:
 bun run dev
 ```
 
-## Production
+### Production
 
 Build the application for production:
 
@@ -34,4 +53,6 @@ Locally preview production build:
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+---
+
+Built with ❤ by [Joao](https://joaosantos.dev/)

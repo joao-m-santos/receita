@@ -118,6 +118,7 @@ footer {
   padding: 1rem;
   background-color: var(--light-gray);
   font-size: 0.75rem;
+  border-radius: 0.25rem;
 }
 
 .footer-link {
