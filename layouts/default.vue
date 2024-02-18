@@ -43,12 +43,13 @@ header {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .logo {
   color: var(--dark-blue);
-  padding-left: 2rem;
+  padding: 1rem;
+  margin-left: 1rem;
   margin-right: auto;
 }
 
@@ -79,6 +80,7 @@ h1 {
 
 main {
   max-width: var(--content-width);
+  min-height: calc(100vh - 7.75rem - 3.125rem);
   margin: auto;
   padding: 2rem 1rem;
 }
@@ -86,16 +88,24 @@ main {
 /* Mobile */
 @media (width <= 768px) {
   header {
-    gap: 1rem;
-    padding: 1rem 0;
+    gap: 0;
+    padding: 0;
+  }
+
+  main {
+    min-height: calc(100vh - 5.75rem - 3.125rem);
   }
 
   .logo {
-    padding-left: 1rem;
+    margin-left: 0;
   }
 
   .logo > h1::after {
     content: 'R';
+  }
+
+  .search {
+    margin-right: 1rem;
   }
 
   .submit {
@@ -112,9 +122,6 @@ main {
 }
 
 footer {
-  position: fixed;
-  bottom: 0rem;
-  left: 0rem;
   padding: 1rem;
   background-color: var(--light-gray);
   font-size: 0.75rem;
