@@ -15,13 +15,20 @@
         </div>
       </div>
 
-      <NuxtImg
-        format="webp"
-        :src="`/images/${$route.params.slug}.png`"
-        width="720"
-        height="540"
-        alt=""
-      />
+      <div class="photo">
+        <div v-if="isImgLoading" class="photo__skeleton">
+          <PhImageSquare class="photo__icon" />
+        </div>
+        <NuxtImg
+          class="photo__img"
+          format="webp"
+          :src="`/images/${$route.params.slug}.png`"
+          width="376"
+          height="222"
+          :alt="doc.title"
+          @load="isImgLoading = false"
+        />
+      </div>
 
       <ContentRenderer class="content" :value="doc" />
 
@@ -35,17 +42,26 @@
 </template>
 
 <script setup lang="ts">
-import { PhUserCircle } from '@phosphor-icons/vue/compact';
+import { PhImageSquare, PhUserCircle } from '@phosphor-icons/vue/compact';
 
 const route = useRoute();
 const lastUpdated = await getLastUpdated(route.params.slug as string);
+
+const isImgLoading = ref(true);
+
+onMounted(() => {
+  setTimeout(() => {
+    // After 5 seconds, hide photo skeleton anyways
+    isImgLoading.value = false;
+  }, 5000);
+});
 </script>
 
 <style scoped>
 article {
   display: grid;
   gap: 1rem;
-  grid-template-areas: 'header photo' 'header photo' 'content content' 'footer footer';
+  grid-template-areas: 'header photo' 'content content' 'footer footer';
   grid-template-columns: 1fr 1fr;
 }
 
@@ -85,13 +101,47 @@ article > .header > h2 {
   gap: 0.5rem;
 }
 
-article > img {
-  aspect-ratio: 16/9;
+.photo {
+  position: relative;
   grid-area: photo;
-  height: 100%;
   border-radius: 0.25rem;
+  overflow: hidden;
+}
 
+.photo__img {
+  aspect-ratio: 16/9;
+  height: 100%;
   object-fit: cover;
+}
+
+.photo__skeleton {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(90deg, var(--white) 25%, var(--light-gray) 50%, var(--white) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.photo__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: var(--gray);
 }
 
 article > .content {
