@@ -24,7 +24,7 @@
 import type { IRecipe } from '~/types';
 
 const { data } = await useAsyncData('recipes', () =>
-  queryContent<IRecipe>('recipes').limit(1).find()
+  queryContent<IRecipe>('recipes').limit(6).find()
 );
 
 const computedData = ref<Array<IRecipe> | null>(null);

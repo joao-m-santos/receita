@@ -68,6 +68,7 @@ const props = defineProps({
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  margin-bottom: 0.25rem;
   font-size: 0.75rem;
   color: var(--blue-gray);
 }

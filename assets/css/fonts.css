@@ -17,13 +17,13 @@
 }
 
 @font-face {
-  font-family: Raleway;
+  font-family: Red Hat Display;
   font-weight: 400;
-  src: url('~/assets/fonts/Raleway-Regular.ttf');
+  src: url('~/assets/fonts/RedHatDisplay-Regular.ttf');
 }
 
 @font-face {
-  font-family: Raleway;
+  font-family: Red Hat Display;
   font-weight: 700;
-  src: url('~/assets/fonts/Raleway-Bold.ttf');
+  src: url('~/assets/fonts/RedHatDisplay-Bold.ttf');
 }

@@ -14,7 +14,7 @@
   --light-green: #ddffe4;
   --white: #fff;
 
-  --title-font-family: Raleway;
+  --title-font-family: Red Hat Display;
   --body-font-family: Inter;
 }
 
@@ -69,8 +69,8 @@ h3 {
   min-height: 2.5rem; /* 40px */
   padding: 0.5rem 1rem;
   color: var(--white);
-  font-family: var(--title-font-family);
-  font-size: 1rem;
+  font-family: var(--body-font-family);
+  font-size: 0.875rem;
   font-weight: 700;
   white-space: pre;
   background-color: var(--red);
