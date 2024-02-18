@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { PhClipboard } from '@phosphor-icons/vue';
+import { PhClipboard } from '@phosphor-icons/vue/compact';
 
 const code = ref<HTMLElement | null>(null);
 const showTooltip = ref(false);

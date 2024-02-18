@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { PhUploadSimple } from '@phosphor-icons/vue';
+import { PhUploadSimple } from '@phosphor-icons/vue/compact';
 
 import { footerHref } from '../config.json';
 </script>

@@ -21,7 +21,7 @@ const props = defineProps({
 
 const { icon, color, label } = tagList[props.value];
 
-const iconComponent = (await import('@phosphor-icons/vue'))[`Ph${icon}`];
+const iconComponent = (await import('@phosphor-icons/vue/compact'))[`Ph${icon}`];
 </script>
 
 <style scoped>

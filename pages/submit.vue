@@ -69,7 +69,7 @@
 </template>
 
 <script setup lang="ts">
-import { PhArrowSquareOut } from '@phosphor-icons/vue';
+import { PhArrowSquareOut } from '@phosphor-icons/vue/compact';
 
 import { repoUrl } from '~/config.json';
 

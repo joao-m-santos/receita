@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import { PhUserCircle } from '@phosphor-icons/vue';
+import { PhUserCircle } from '@phosphor-icons/vue/compact';
 
 const route = useRoute();
 const lastUpdated = await getLastUpdated(route.params.slug as string);

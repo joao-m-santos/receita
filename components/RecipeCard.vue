@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import type { PropType } from 'vue';
-import { PhClock, PhUserCircle } from '@phosphor-icons/vue';
+import { PhClock, PhUserCircle } from '@phosphor-icons/vue/compact';
 
 const props = defineProps({
   title: {

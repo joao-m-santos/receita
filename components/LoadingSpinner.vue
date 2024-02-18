@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { PhCircleNotch } from '@phosphor-icons/vue';
+import { PhCircleNotch } from '@phosphor-icons/vue/compact';
 </script>
 
 <style scoped>
